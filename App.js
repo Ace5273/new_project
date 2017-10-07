@@ -5,7 +5,6 @@ import { Alert, AppRegistry, Platform, StyleSheet, Text, TouchableHighlight, Tou
 export default class App extends React.Component {
 
     _onPressButton() {
-        Alert.alert('You tapped the button!')
     }
 
     _onLongPressButton() {
@@ -16,7 +15,7 @@ export default class App extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <TouchableHighlight underlayColor="white">
+                <TouchableHighlight onPress={ this._onPressButton } underlayColor= "white" >
                     <View style={styles.button}>
                         <Text style={styles.buttonText}>TouchableHighlight</Text>
                     </View>
@@ -37,7 +36,7 @@ export default class App extends React.Component {
                         <Text style={styles.buttonText}>TouchableWithoutFeedback</Text>
                     </View>
                 </TouchableWithoutFeedback>
-                <TouchableHighlight onPress={this._onPressButton} onLongPress={this._onLongPressButton} underlayColor="white">
+                <TouchableHighlight onPress={this._onPressButton} onLongPress={this._onLongPressButton} underlayColor="gray">
                     <View style={styles.button}>
                         <Text style={styles.buttonText}>Touchable with Long Press</Text>
                     </View>
