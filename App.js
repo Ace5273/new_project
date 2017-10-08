@@ -9,7 +9,7 @@ export default class TabViewExample extends Component {
     state = {
         index: 0,
         routes: [
-            { key: '1', title: 'First' },
+            { key: '1', title: 'Check' },
             { key: '2', title: 'Second' },
         ],
     };
