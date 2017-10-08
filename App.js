@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
-import { AppBar } from './Components/AppBar';
+import { AppBar } from './'
 
 import type { NavigationState } from 'react-native-tab-view/types';
 
@@ -68,7 +68,6 @@ export default class App extends Component<void, *, State > {
         }
 
         const { index } = this.state;
-
         const backgroundColor = '#222';
         const tintColor = 'white';
         const appbarElevation = 4;
@@ -86,7 +85,6 @@ export default class App extends Component<void, *, State > {
                             : null,
                     ]}
                 >
-                    
                     <Text style={[styles.title, tintColor ? { color: tintColor } : null]}>
                         { this.state.title }
                     </Text>
