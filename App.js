@@ -1,13 +1,39 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
-import { MainView } from './Components/MainView';
 
-export default class App extends Component {
+const FirstRoute = () => <View style={[styles.container, { backgroundColor: '#ff4081' }]} />;
+const SecondRoute = () => <View style={[styles.container, { backgroundColor: '#673ab7' }]} />;
+
+export default class TabViewExample extends Component {
+    state = {
+        index: 0,
+        routes: [
+            { key: '1', title: 'First' },
+            { key: '2', title: 'Second' },
+        ],
+    };
+
+    _handleIndexChange = index => this.setState({ index });
+
+    _renderHeader = props => <TabBar {...props} />;
+
+    _renderScene = SceneMap({
+        '1': FirstRoute,
+        '2': SecondRoute,
+    });
 
     render() {
         return (
-            <MainView ></MainView>
+            <View>
+                <TabViewAnimated
+                    style={styles.container}
+                    navigationState={this.state}
+                    renderScene={this._renderScene}
+                    renderHeader={this._renderHeader}
+                    onIndexChange={this._handleIndexChange}
+                />
+            </View>
         );
     }
 }

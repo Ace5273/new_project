@@ -3,14 +3,14 @@ import { StyleSheet } from 'react-native';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 import SimplePage from './SimplePage';
 
-import { NavigationState } from 'react-native-tab-view/types';
+import type { NavigationState } from 'react-native-tab-view/types';
 
-//type Route = {
-//    key: string,
-//    title: string,
-//};
+type Route = {
+    key: string,
+    title: string,
+};
 
-//type State = NavigationState<Route>;
+type State = NavigationState<Route>;
 
 export default class TopBarTextExample extends Component {
 
