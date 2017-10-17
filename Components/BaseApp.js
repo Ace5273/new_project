@@ -13,12 +13,11 @@ import {
     Dimensions
 } from 'react-native';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
-import ViewPusher from './Components/AppBarSubComponents/ViewPusher'
-import AppBar from './Components/AppBar';
-import Container from './Components/Container';
-import AppBarText from './Components/AppBarSubComponents/AppBarText'
-import ActionButton from './Components/Buttons/ActionButton'
-import BaseApp from './Components/BaseApp'
+import ViewPusher from './AppBarSubComponents/ViewPusher'
+import AppBar from './AppBar';
+import Container from './Container';
+import AppBarText from './AppBarSubComponents/AppBarText'
+import ActionButton from './Buttons/ActionButton'
 
 import type { NavigationState } from 'react-native-tab-view/types';
 
@@ -32,7 +31,7 @@ type State = NavigationState<Route>;
 const FirstRoute = () => <View style={[styles.container, { backgroundColor: '#ff4081' }]} />;
 const SecondRoute = () => <View style={[styles.container, { backgroundColor: '#673ab7' }]} />;
 
-export default class App extends Component {
+export default class BaseApp extends Component {
 
     constructor() {
         super()
